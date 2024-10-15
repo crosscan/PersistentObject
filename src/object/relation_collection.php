@@ -60,7 +60,7 @@ class ezcPersistentRelationCollection extends ArrayObject
      * @param ezcPersistentRelation $value 
      * @return void
      */
-    public function offsetSet( $offset, $value )
+    public function offsetSet( $offset, $value ): void
     {
         if ( ( $value instanceof ezcPersistentRelation ) === false )
         {
@@ -80,7 +80,7 @@ class ezcPersistentRelationCollection extends ArrayObject
      * @param array(ezcPersistentRelation) $array New relations array.
      * @return void
      */
-    public function exchangeArray( $array )
+    public function exchangeArray( $array ): array
     {
         foreach ( $array as $offset => $value )
         {
@@ -103,7 +103,7 @@ class ezcPersistentRelationCollection extends ArrayObject
      * @param int $flags Must be 0.
      * @return void
      */
-    public function setFlags( $flags )
+    public function setFlags( $flags ): void
     {
         if ( $flags !== 0 )
         {
@@ -117,7 +117,7 @@ class ezcPersistentRelationCollection extends ArrayObject
      * @param mixed $value 
      * @return void
      */
-    public function append( $value )
+    public function append( $value ): void
     {
         throw new Exception( 'Operation append is not supported by this object.' );
     }

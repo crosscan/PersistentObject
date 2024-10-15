@@ -101,7 +101,7 @@ class ezcPersistentFindIterator implements Iterator
      *
      * @return void
      */
-    public function rewind()
+    public function rewind(): void
     {
         if ( $this->object === null )
         {
@@ -116,7 +116,7 @@ class ezcPersistentFindIterator implements Iterator
      *
      * @return object
      */
-    public function current()
+    public function current(): mixed
     {
         return $this->object;
     }
@@ -129,7 +129,7 @@ class ezcPersistentFindIterator implements Iterator
      *
      * @return null
      */
-    public function key()
+    public function key(): mixed
     {
         return null;
     }
@@ -143,6 +143,7 @@ class ezcPersistentFindIterator implements Iterator
      *
      * @return object
      */
+    #[ReturnTypeWillChange]
     public function next()
     {
         $row = false;
@@ -193,7 +194,7 @@ class ezcPersistentFindIterator implements Iterator
      *
      * @return bool
      */
-    public function valid()
+    public function valid(): bool
     {
         return $this->object !== null ? true : false;
     }
